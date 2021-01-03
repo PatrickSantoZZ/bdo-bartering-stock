@@ -117,7 +117,25 @@ function updateItemData(itemContainer, itemData) {
 function updateAllItems(itemData) {
     let itemsDom = document.querySelectorAll('[data-item]');
 
+    const translationGrade = [
+        BarterItem.GRADES.WHITE = 'white',
+        BarterItem.GRADES.GREEN = 'green',
+        BarterItem.GRADES.BLUE = 'blue',
+        BarterItem.GRADES.YELLOW = 'yellow',
+        BarterItem.GRADES.ORANGE = 'orange',
+    ]
+
     itemsDom.forEach( (itemContainer) => {
+        // prepare headers (thanks github/lfs, ugh)
+        const item = itemData.find(item => item.id === itemContainer.dataset.item);
+        let html = htmlToElement(`
+        <p class="flex">
+            <img src="${iconRoot}${item.id}.png" />
+            <span class="grade-${translationGrade[item.grade]}">${item.name}</span>
+        </p>`);
+        itemContainer.prepend(html);
+
+        // load data
         updateItemData(itemContainer, itemData);
     });
 }
