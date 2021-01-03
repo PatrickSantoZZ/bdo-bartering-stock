@@ -1,0 +1,365 @@
+*, *:before, *:after
+{
+    box-sizing: border-box;
+}
+
+:root
+{
+    --main-bg-color: hsla(255, 3%, 20%, 95%);
+    --main-fg-color: hsla(29, 30%, 77%, 95%);
+
+    --main-bg-color-disabled: hsl(255, 3%, 16%);
+    --main-fg-color-disabled: hsl(29, 0%, 50%);
+
+    --alt-bg-color: hsla(220, 3%, 15%, 95%);
+    --alt-fg-color: hsla(42, 21%, 100%, 95%);
+
+    --alt-border-color: hsl(220, 3%, 27%);
+    --alt-border-color-disabled: hsl(220, 0%, 20%);
+
+    /** ranks **/
+    --beginner: #c4c4c4;
+    --apprentice: #76b24d;
+    --skilled: #4b85b5;
+    --professional: #ebc467;
+    --artisan: #d04d47;
+    --master: #b23bc7;
+    
+    /** grades **/
+    --white: #c4c4c4;
+    --green: #83a543;
+    --blue: #438dcc;
+    --yellow: #f5ba3a;
+    --orange: #d05d48; /* it is actually red but don't tell that to PA */
+}
+
+html, body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+
+html
+{
+    background: url(https://www.mmogames.com/wp-content/uploads/2013/10/2-blackdesert_bg_22.jpg) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+main
+{
+    align-items: center;
+    display: flex;
+}
+
+main > *
+{
+    margin-left: 10px;
+}
+
+.main-theme
+{
+    background: var(--main-bg-color);
+    color: var(--main-fg-color);
+}
+
+.alt-theme
+{
+    background: var(--alt-bg-color);
+    color: var(--alt-fg-color);
+}
+
+.border-theme
+{
+    border: 1px solid var(--alt-border-color);
+    border-radius: 5px;
+}
+
+.sets
+{
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.sets .inner
+{
+    background: var(--alt-bg-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.sets .block
+{
+    border: 1px solid var(--alt-border-color);
+    border-radius: 5px;
+    background: var(--main-bg-color);
+    color: var(--main-fg-color);
+    padding: 5px;
+    width: 50%;
+    max-width: 50%;
+}
+
+.sets .block.bad
+{
+    background: var(--main-bg-color-disabled);
+    border-color: var(--alt-border-color-disabled);
+    color: var(--main-fg-color-disabled);
+}
+
+.sets .block.bad .low-rank
+{
+    color: var(--main-fg-color);
+    font-size: 80%;
+}
+
+.sets .inner .block:first-child
+{
+    margin-right: 5px;
+}
+
+.sets .block p
+{
+    padding: 0;
+    margin: 0 0 8px 0;
+}
+.sets .block p.low-rank
+{
+    margin: 8px 0 0 0;
+}
+
+.sets .block .trade-items
+{
+    flex-wrap: wrap;
+}
+
+.sets .block .item-wrapper .trade-item
+{
+    margin: 2px;
+    background: linear-gradient(to bottom, #1b1b1e, #2a2a2e);
+    border: 1px solid #4a4b4f;
+    padding: 1px;
+}
+
+.block .trade-item img
+{
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.sets .block .item-wrapper .switch
+{
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+button
+{
+    cursor: pointer;
+}
+
+.sets .block .item-wrapper .switch
+{
+    opacity: 0.1;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    
+}
+
+.sets .block:hover .switch
+{
+    opacity: 1;
+    transition: none;
+    pointer-events: auto;
+}
+
+.bad img
+{
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+.sets .block.bad .item-wrapper .trade-item
+{
+    background: linear-gradient(to bottom, #5d0e24, #62172e);
+}
+
+.sets button
+{
+    flex: 1;
+    background: linear-gradient(to bottom, #454650, #3c3d46);
+    color: #e0e0e0;
+    border-radius: 3px;
+    border: 1px solid #4c4d54;
+    border-top-color: #71727a;
+    position: relative;
+}
+.sets button:hover
+{
+    background: linear-gradient(to bottom, #5a4a42, #50433b);
+    color: #ffedd4;
+    border-radius: 3px;
+    border: 1px solid #645042;
+    border-top-color: #997754;
+}
+.sets button:active
+{
+    background: #665345;
+    border-color: #796252;
+    border-top-color: #8e7666;
+    box-shadow: 1px 1px 3px hsla(0, 0%, 0%, 50%);
+}
+.sets button:active:hover
+{
+    top: 1px;
+}
+
+.sets .ab
+{
+    margin-bottom: 5px;
+}
+
+.sets .ab p
+{
+    align-items: center;
+}
+
+.sets .ab p span
+{
+    margin-left: 5px;
+}
+
+.sets .ab:last-of-type
+{
+    margin-bottom: 0;
+}
+
+main select
+{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3E%3Csvg version='1.0' id='Layer_2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='800px' height='800px' viewBox='0 0 800 800' enable-background='new 0 0 800 800' xml:space='preserve'%3E%3Cg%3E%3Cpolygon fill='%23FFFFFF' points='720,82 400,721.6 80,82 '/%3E%3C/g%3E%3C/svg%3E%0A"),
+    #43434e;
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+    border: 1px solid #50505c;
+    color: #fff;
+    padding: 5px;
+    padding-right: 25px; /** dropdown arrow **/
+    line-height: normal;
+    margin: 10px;
+}
+main select:focus
+{
+    background-color: #2b2b32;
+    border-color: #2b2b32;
+    color: #858897;
+}
+
+/** mmm ranks **/
+.rank-beginner
+{
+    color: var(--beginner);
+}
+.rank-apprentice
+{
+    color: var(--apprentice);
+}
+.rank-skilled
+{
+    color: var(--skilled);
+}
+.rank-professional
+{
+    color: var(--professional);
+}
+.rank-artisan
+{
+    color: var(--artisan);
+}
+.rank-master
+{
+    color: var(--master);
+}
+/** mmm bartering grades **/
+.grade-white
+{
+    color: var(--white);
+}
+.grade-green
+{
+    color: var(--green);
+}
+.grade-blue
+{
+    color: var(--blue);
+}
+.grade-yellow
+{
+    color: var(--yellow);
+}
+.grade-orange
+{
+    color: var(--orange);
+}
+
+header
+{
+    line-height: 250%;
+}
+
+/** mmmm helpers **/
+.icon
+{
+    display: inline-block;
+}
+
+.flex
+{
+    display: flex;
+}
+
+.flex-item
+{
+    flex: 1;
+}
+
+.column
+{
+    flex-direction: column;
+}
+
+.row
+{
+    flex-direction: row;
+}
+
+.hidden
+{
+    display: none;
+}
+
+footer
+{
+    font-size: 0.7em;
+    color: var(--alt-fg-color);
+    text-shadow: 0 0 2px var(--main-bg-color),
+        1px 1px 2px var(--alt-bg-color),
+        -1px -1px 2px var(--alt-bg-color),
+        0 0 1em var(--alt-bg-color),
+        0 0 0.2em var(--alt-bg-color);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a
+{
+    color: var(--alt-fg-color);
+}
+
+footer small
+{
+    font-size: 0.3em;
+}
