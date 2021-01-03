@@ -5,7 +5,7 @@ import BarterItem from './modules/BarterItem.js';
 
 const iconRoot = (window.origin.indexOf('127.0.0.1') !== -1 ?
     './icon/' :
-    '//github.com/yutsuku/CHANGE_ME/raw/master/icon/'
+    '//github.com/yutsuku/bdo-bartering-stock/raw/master/icon/'
 );
 
 const itemData = [
